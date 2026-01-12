@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!-- List View -->
+        <record id="estate_property_offer_list_view" model="ir.ui.view">
+            <field name="name">estate.property.offer.list</field>
+            <field name="model">estate.property.offer</field>
+            <field name="arch" type="xml">
+                <list >
+                    <field name="price"/>
+                    <field name="status"/>
+                    <field name="partner_id"/>
+                    <field name="property_id"/>
+                    <field name="creation_date"/>
+                    <field name="validity"/>
+                    <field name="deadline"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="estate_property_offer_form_view" model="ir.ui.view">
+            <field name="name">estate.property.offer.form</field>
+            <field name="model">estate.property.offer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                            <field name="price"/>
+                            <field name="status"/>
+                           <field name="partner_id"/>
+                           <field name="property_id"/>
+                            </group>
+                            <group>
+                             <field name="creation_date" readonly="1"/>
+                            <field name="validity"/>
+                            <field name="deadline"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_property_offers" model="ir.actions.act_window">
+            <field name="name">Property Offers</field>
+            <field name="res_model">estate.property.offer</field>
+            <field name="view_mode">list,form</field>
+            <field name="view_id" ref="estate_property_offer_list_view"/>
+        </record>
+
+    </data>
+</odoo>

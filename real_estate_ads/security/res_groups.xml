@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- مجموعة مستخدم عادي: إدارة العقارات الخاصة به -->
+    <record id="group_property_user" model="res.groups">
+        <field name="name">User: Manage own property</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- مجموعة المدير: إدارة كل العقارات -->
+    <record id="group_property_manager" model="res.groups">
+        <field name="name">Manager: Manage all properties</field>
+        <field name="implied_ids" eval="[(4, ref('real_estate_ads.group_property_user'))]"/>
+    </record>
+</odoo>
